@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Mi Amor ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffb5c2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .petal {
+            position: fixed;
+            font-size: 30px;
+            animation: fall 15s infinite;
+            z-index: 0;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            color: #8d4057;
+            padding: 60px 20px;
+            animation: fadeInDown 1.2s ease;
+            position: relative;
+        }
+
+        .header::before {
+            content: '🌸';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.15;
+            top: 20px;
+            left: 10%;
+            animation: float-gentle 4s infinite;
+        }
+
+        .header::after {
+            content: '🌸';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.15;
+            top: 20px;
+            right: 10%;
+            animation: float-gentle 4s infinite 2s;
+        }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+            color: #d14d72;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 1.4em;
+            font-style: italic;
+            color: #a05a7a;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(209, 77, 114, 0.2);
+            animation: fadeInUp 1s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ffecd2, #fcb69f, #ffb5c2, #ffecd2);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 0.5;
+        }
+
+        .card h2 {
+            color: #d14d72;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            text-align: center;
+            position: relative;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .card h2::before {
+            content: '✿';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -30px;
+            font-size: 0.7em;
+            color: #fcb69f;
+        }
+
+        .card p {
+            color: #5a5a5a;
+            line-height: 2;
+            font-size: 1.15em;
+            text-align: center;
+            margin: 18px 0;
+        }
+
+        /* ESTILOS MEJORADOS PARA IMÁGENES */
+        .image-placeholder {
+            width: fit-content;
+            max-width: 100%;
+            height: auto;
+            min-height: 400px;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe5e9 100%);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 8px 25px rgba(252, 182, 159, 0.3);
+            padding: 20px;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 500px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Imagen destacada más grande */
+        .featured-image {
+            min-height: 450px;
+        }
+
+        .featured-image img {
+            max-height: 600px;
+        }
+
+        .verse {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffebef 100%);
+            padding: 30px;
+            border-radius: 25px;
+            border-left: 5px solid #fcb69f;
+            margin: 25px 0;
+            font-style: italic;
+            box-shadow: 0 5px 20px rgba(252, 182, 159, 0.15);
+            position: relative;
+        }
+
+        .verse::before {
+            content: '❝';
+            position: absolute;
+            top: 10px;
+            left: 25px;
+            font-size: 50px;
+            color: #fcb69f;
+            opacity: 0.4;
+            font-family: 'Georgia', serif;
+        }
+
+        .verse::after {
+            content: '🌿';
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 25px;
+            opacity: 0.5;
+        }
+
+        .verse-text {
+            color: #5a5a5a;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            line-height: 1.9;
+            padding-left: 35px;
+            padding-right: 20px;
+        }
+
+        .verse-ref {
+            color: #d14d72;
+            font-weight: bold;
+            text-align: right;
+            display: block;
+            font-size: 1.1em;
+            padding-right: 10px;
+        }
+
+        .quality-item {
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe5e9 100%);
+            color: #5a5a5a;
+            padding: 25px;
+            margin: 18px 0;
+            border-radius: 20px;
+            border-left: 4px solid #fcb69f;
+            box-shadow: 0 4px 15px rgba(252, 182, 159, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .quality-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 20px rgba(252, 182, 159, 0.35);
+            background: linear-gradient(135deg, #ffe5e9 0%, #fff0f3 100%);
+        }
+
+        .quality-item strong {
+            font-size: 1.3em;
+            display: block;
+            margin-bottom: 10px;
+            color: #d14d72;
+        }
+
+        /* CARTAS DE AMOR INTERACTIVAS */
+        .letters-container {
+            background: linear-gradient(135deg, #fff9fb 0%, #fef5f7 100%);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .letters-title {
+            color: #d14d72;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .letters-subtitle {
+            color: #a05a7a;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .envelopes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            perspective: 1000px;
+        }
+
+        .envelope:hover {
+            transform: translateY(-10px);
+        }
+
+        .envelope-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(209, 77, 114, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .envelope.opened .envelope-body {
+            box-shadow: 0 5px 20px rgba(209, 77, 114, 0.2);
+        }
+
+        .envelope-flap {
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(135deg, #ffb5c2, #ffc3a0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top;
+            transition: transform 0.6s ease;
+            border-radius: 10px 10px 0 0;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            box-shadow: 0 3px 10px rgba(209, 77, 114, 0.2);
+        }
+
+        .envelope.opened .envelope-flap {
+            transform: rotateX(180deg);
+        }
+
+        .envelope-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            opacity: 0.6;
+        }
+
+        .envelope-label {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9em;
+            color: #8d4057;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        .envelope-number {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #d14d72;
+            font-size: 0.9em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Modal para cartas */
+        .letter-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .letter-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .letter-content {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(209, 77, 114, 0.4);
+            animation: slideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            border: 3px solid #ffecd2;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.8); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .letter-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ffecd2, #fcb69f, #ffb5c2, #ffecd2);
+        }
+
+        .letter-content h3 {
+            color: #d14d72;
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .letter-content p {
+            color: #5a5a5a;
+            font-size: 1.2em;
+            line-height: 2;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-style: italic;
+            color: #d14d72;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+
+        .letter-close {
+            background: linear-gradient(135deg, #fcb69f, #d14d72);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-family: 'Georgia', serif;
+            box-shadow: 0 5px 20px rgba(209, 77, 114, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .letter-close:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(209, 77, 114, 0.5);
+        }
+
+        /* GALERÍA MEJORADA */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            width: fit-content;
+            max-width: 100%;
+            min-height: 300px;
+            height: auto;
+            padding: 15px;
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+            max-height: 350px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart-icon {
+            color: #d14d72;
+            animation: pulse-soft 2.5s infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 8px rgba(209, 77, 114, 0.4));
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+
+        .footer {
+            text-align: center;
+            color: #8d4057;
+            padding: 60px 20px;
+            font-size: 1.3em;
+        }
+
+        .footer-heart {
+            font-size: 3.5em;
+            animation: pulse-soft 2s infinite;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.3em;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+            
+            .card h2 {
+                font-size: 1.8em;
+            }
+            
+            .image-placeholder {
+                min-height: 250px;
+                padding: 15px;
+            }
+
+            .image-placeholder img {
+                max-height: 400px;
+            }
+
+            .featured-image {
+                min-height: 300px;
+            }
+
+            .featured-image img {
+                max-height: 450px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                min-height: 250px;
+                padding: 10px;
+            }
+
+            .gallery-item img {
+                max-height: 300px;
+            }
+
+            .envelopes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .envelope {
+                height: 150px;
+            }
+
+            .letter-content {
+                padding: 30px;
+            }
+
+            .letter-content h3 {
+                font-size: 1.5em;
+            }
+
+            .letter-content p {
+                font-size: 1em;
+            }
+        }
+
+        .card {
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(209, 77, 114, 0.25);
+        }
+
+        .letters-instruction {
+            color: #a05a7a;
+            font-size: 1em;
+            margin-top: 20px;
+            opacity: 0.8;
+            animation: pulse-slow 2s infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="floating-container"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Para Ti, Mi Amorcito bello <span class="heart-icon">❤️</span></h1>
+            <p>Eres mi oración más hermosa hecha realidad</p>
+        </div>
+
+        <div class="card">
+            <h2>Mi vida Eterna 💕</h2>
+            <p>
+                Cada día a tu lado es un regalo del cielo. No existen palabras suficientes 
+                para expresar todo lo que siento por ti. Eres mi inspiración, mi alegría, 
+                mi mejor amiga y el amor de mi vida.
+            </p>
+            <p>
+                Gracias por existir, por amarme, por estar conmigo en cada momento. 
+                Eres perfecta tal como eres, y me siento el más afortunado del mundo 
+                por tenerte a mi lado.
+            </p>
+            <p style="font-size: 1.25em; color: #d14d72; font-style: italic; margin-top: 25px;">
+                Eres la razón por la que mi corazón late con amor 💖
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Nuestros Momentos ✨</h2>
+            <div class="image-placeholder featured-image">
+                <img src="Imagenes/WhatsApp Image 2026-02-12 at 3.48.31 PM.jpeg" alt="Mi amor">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Palabras de Dios para Nuestro Amor 📖</h2>
+            
+            <div class="verse">
+                <p class="verse-text">
+                    "Ponme como un sello sobre tu corazón, como una marca en tu brazo; 
+                    porque fuerte es como la muerte el amor; duros como el Seol los celos; 
+                    sus brasas, brasas de fuego, fuerte llama."
+                </p>
+                <span class="verse-ref">— Cantares 8:6</span>
+            </div>
+
+            <div class="verse">
+                <p class="verse-text">
+                    "El amor es sufrido, es benigno; el amor no tiene envidia, 
+                    el amor no es jactancioso, no se envanece; no hace nada indebido, 
+                    no busca lo suyo, no se irrita, no guarda rencor."
+                </p>
+                <span class="verse-ref">— 1 Corintios 13:4-5</span>
+            </div>
+
+            <div class="verse">
+                <p class="verse-text">
+                    "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto."
+                </p>
+                <span class="verse-ref">— Colosenses 3:14</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Lo que amo de ti 🌟</h2>
+            <div class="quality-item">
+                <strong>🌸 Tu bella sonrisa</strong>
+                Ilumina todos mis dias y me hacen muy feliz hasta en los momentos más dificiles.
+            </div>
+            <div class="quality-item">
+                <strong>💐 Tu corazon</strong>
+                Tan noble, tan puro, tan lleno de amor para darme, tan hermoso, lo amo profundamente.
+            </div>
+            <div class="quality-item">
+                <strong>🌺 Tu fortaleza</strong>
+                Tu valentía y cómo enfrentas cada desafío es un ejemplo para mí, siempre me inspiras y eres la mujer que me hace salir adelante.
+            </div>
+            <div class="quality-item">
+                <strong>🌹 Tu belleza</strong>
+                Tanto interior como exterior, eres la mujer más bella del mundo mi reina hermosaaa.
+            </div>
+            <div class="quality-item">
+                <strong>🌷 Tu amor</strong>
+                La forma en que me amas me hace querer ser mejor cada día, tu manera de amar me hace sentir que soy el hombre mas afotunado del mundo por tenerte a ti baby.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Galería de nuestro amor 📸</h2>
+            <div class="gallery">
+                <div class="image-placeholder gallery-item">
+                    <img src="Imagenes/WhatsApp Image 2026-02-12 at 3.37.38 PM.jpeg" alt="Momento especial 1">
+                </div>
+                <div class="image-placeholder gallery-item">
+                    <img src="Imagenes/WhatsApp Image 2026-02-12 at 4.12.32 PM.jpeg" alt="Momento especial 2">
+                </div>
+                <div class="image-placeholder gallery-item">
+                    <img src="Imagenes/WhatsApp Image 2026-02-12 at 4.14.44 PM.jpeg" alt="Momento especial 3">
+                </div>
+                <div class="image-placeholder gallery-item">
+                    <img src="Imagenes/WhatsApp Image 2026-02-12 at 4.15.49 PM.jpeg" alt="Momento especial 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- CARTAS DE AMOR INTERACTIVAS -->
+        <div class="card">
+            <div class="letters-container">
+                <h2 class="letters-title">💌 Cartas de Mi Corazón</h2>
+                <p class="letters-subtitle">Escribi estas cartas para ti, para que veas lo mucho que te amo - Abre cada sobre para leer todo lo que siento por ti</p>
+                
+                <div class="envelopes-grid">
+                    <div class="envelope" onclick="openLetter(1)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💕</div>
+                            <div class="envelope-number">1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope" onclick="openLetter(2)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💖</div>
+                            <div class="envelope-number">2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope" onclick="openLetter(3)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💗</div>
+                            <div class="envelope-number">3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope" onclick="openLetter(4)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💝</div>
+                            <div class="envelope-number">4</div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope" onclick="openLetter(5)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💓</div>
+                            <div class="envelope-number">5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope" onclick="openLetter(6)">
+                        <div class="envelope-body">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-icon">💞</div>
+                            <div class="envelope-number">6</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="letters-instruction">✨ Toca cada sobre para abrir tu carta ✨</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Promesa Eterna 💍</h2>
+            <div class="image-placeholder featured-image">
+                <img src="Imagenes/WhatsApp Image 2026-02-12 at 4.18.59 PM.jpeg" alt="Promesa eterna">
+            </div>
+            <p>
+                Te prometo amarte hoy, mañana y siempre. Cada día que pasa, mi amor por ti 
+                crece más y más y se va volviendo mas fuerte. Eres mi presente y mi futuro, mi razón de sonreír cada mañana, mi mas preciado tesoro, mi mas bella mujer, la razon de mis latidos
+                a ti te dedico todo mis latidos, te entrego mi alma, te doy todo mi amor, porque como tu ninguna y creeme que eres lo mas bello del mundo.
+            </p>
+            <p style="font-size: 1.5em; color: #d14d72; margin-top: 25px; font-style: italic;">
+                Te amo más de lo que las palabras pueden expresar ❤️
+            </p>
+            <p style="font-size: 1.2em; color: #a05a7a; margin-top: 20px; font-style: italic;">
+                Eres mi para siempre, mi amor infinito, mi vida, mi reina, mi cielo, mi cultia, mi amada, mi deseo, mi bebe, mi niña, mi todo 🌸
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-heart">💕</div>
+            <p>Con todo mi amor, para toda la eternidad</p>
+            <p style="font-size: 0.9em; opacity: 0.85; margin-top: 18px; font-style: italic;">
+                Hecho con amor especialmente para ti baby
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal para cartas -->
+    <div class="letter-modal" id="letterModal">
+        <div class="letter-content" id="letterContent">
+            <!-- El contenido se llenará dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Contenido de las cartas
+        const letters = {
+            1: {
+                title: "El día que te conocí",
+                content: "Mi amor, recuerdo perfectamente el día que te conocí, fue como si el universo se detuviera por un momento, tus ojos brillaron, tu sonrisa me ilumino, tu rostro me encanto, mi alrededor se volvio bello, y supe en ese instante que mi vida cambiaría para siempre. No sabía en ese momento que estaba conociendo a la persona con quien quiero pasar el resto de mi vida, pero mi corazón ya lo sabía y queria que lo tuvieras tu y solamente tu.",
+                signature: "Con todo mi amor y alma, para siempre sere tuyo"
+            },
+            2: {
+                title: "Gracias por estar en mi vida",
+                content: "Quiero darte las gracias por ser parte de mi vida, por amarme, por cuidarme, por hacerme sentir el hombre más feliz del mundo. Gracias por cada sonrisa, cada abrazo, cada palabra de aliento, cada momento compartido. Eres un regalo del cielo y me siento eternamente agradecido por tenerte a mi lado, me encantas, eres la persona que me ha llevado a descubir cosas que no sabía que existían en mi, eres la persona de la cual no puedo negar que estoy profundamente enamorado y con la cual quiere todo, de verdad baby eres un regalo divino de Dios y quiero tenerte por siempre.",
+                signature: "Eternamente agradecido"
+            },
+            3: {
+                title: "Mi promesa para ti",
+                content: "Te prometo estar contigo en las buenas y en las malas, te prometo ser tu apoyo cuando lo necesites, tu alegría en los días malos, y tu compañero en todas las aventuras de la vida, te prometo amarte más cada día, cuidarte, respetarte y valorarte como el tesoro que eres para mí, siempre digo que Dios da sorpresas bellas pero contigo el me dio una super bendicion y te prometo que hare todo lo que sea para tenerte mi amada.",
+                signature: "Tu amor eterno"
+            },
+            4: {
+                title: "Lo que significas para mí",
+                content: "No hay palabras suficientes para expresar lo que significas para mí. Eres mi hogar, mi paz, mi felicidad, eres la razón por la que sonrío cada mañana y la última persona en la que pienso cada noche, realmente no pienso mucho en ti ni te creas, nadamas desde que me levanto hasta que me voy a dormir (sin contar que sueño contigo). Contigo he encontrado el amor verdadero, ese que solo existe en las historias más hermosas, tu eres esa princesa de la que tanto hablaban en los cuentos, eres esa belleza por la cual hago lo que sea y eres la persona que me tiene mas loco y enamorado.",
+                signature: "Tuyo por siempre"
+            },
+            5: {
+                title: "Nuestro futuro juntos",
+                content: "Cuando pienso en el futuro, solo te veo a ti a mi lado. Sueño con todos los momentos que viviremos juntos, las risas que compartiremos, los desafíos que superaremos unidos. Quiero envejecer contigo, crear memorias hermosas y construir una vida llena de amor. Nuestro futuro es brillante porque lo recorreremos juntos, quiero andar contigo por todos los sitios mas bellos del mundo, quiero conocer toda tu familia, todos los lados, explorar aunque sea el mas minimo sitio pero siempre y cuando sea contigo, voy hasta el fin del mundo, recuerda que no hay nada mas bello que el saber de que tienes a una persona que quiere una vida contigo y ese soy yo, yo soy el que aspira a tenerte en todo, en las buenas, malas y peores, en los momentos donde sientas que el mundo se te viene encima, en los momentos donde sientas que nadie te entiende, en los momentos donde te sientas confundida, asi como en los momentos mas hermosos de tu vida, quiero estar siempre ahi como apoyo para ti.",
+                signature: "Para siempre juntos"
+            },
+            6: {
+                title: "Te Amo",
+                content: "Tres palabras tan simples pero con un significado tan profundo. Te amo con todo mi ser, con cada fibra de mi corazón, con cada pensamiento de mi mente. Este amor que siento por ti es infinito, inquebrantable, eterno. Eres y serás siempre el amor de mi vida, mi alma gemela, mi todo, mi vida entera, le pido a Dios que me nos de la bendicion de estar por siempre unidos y ser esa pareja que tanto queremos ser, hacer esas aventuras que tanto soñamos y poder formar una familia bella y funcional.",
+                signature: "Eres mi flor favorita en este jardin llamado vida ❤️"
+            }
+        };
+
+        function openLetter(letterNum) {
+            const envelope = event.currentTarget;
+            envelope.classList.add('opened');
+            
+            setTimeout(() => {
+                showLetterModal(letterNum);
+                createPetalShower();
+            }, 400);
+        }
+
+        function showLetterModal(letterNum) {
+            const modal = document.getElementById('letterModal');
+            const content = document.getElementById('letterContent');
+            const letter = letters[letterNum];
+            
+            content.innerHTML = `
+                <h3>💌 ${letter.title}</h3>
+                <p>${letter.content}</p>
+                <p class="letter-signature">${letter.signature}</p>
+                <button class="letter-close" onclick="closeLetterModal()">Cerrar ❤️</button>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        function closeLetterModal() {
+            const modal = document.getElementById('letterModal');
+            modal.classList.remove('active');
+            
+            // Resetear sobres
+            document.querySelectorAll('.envelope').forEach(env => {
+                env.classList.remove('opened');
+            });
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('letterModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLetterModal();
+            }
+        });
+
+        // Lluvia de pétalos al abrir carta
+        function createPetalShower() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createPetal(true);
+                }, i * 50);
+            }
+        }
+
+        // Crear pétalos flotantes
+        function createPetal(isShower = false) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            
+            const petals = ['🌸', '🌺', '🌷', '🌹', '💮'];
+            petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+            
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 10 + 12) + 's';
+            petal.style.fontSize = (Math.random() * 20 + 25) + 'px';
+            
+            if (isShower) {
+                petal.style.animationDuration = '5s';
+            }
+            
+            document.getElementById('floating-container').appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, isShower ? 5000 : 15000);
+        }
+
+        // Crear mariposas
+        function createButterfly() {
+            const butterfly = document.createElement('div');
+            butterfly.style.position = 'fixed';
+            butterfly.style.fontSize = '25px';
+            butterfly.style.zIndex = '0';
+            butterfly.innerHTML = '🦋';
+            butterfly.style.left = '-50px';
+            butterfly.style.top = Math.random() * 100 + '%';
+            butterfly.style.transition = 'all 20s linear';
+            
+            document.getElementById('floating-container').appendChild(butterfly);
+            
+            setTimeout(() => {
+                butterfly.style.left = '110%';
+                butterfly.style.top = Math.random() * 100 + '%';
+            }, 100);
+            
+            setTimeout(() => {
+                butterfly.remove();
+            }, 20000);
+        }
+
+        // Crear pétalos y mariposas continuamente
+        setInterval(() => {
+            createPetal();
+        }, 3000);
+
+        setInterval(() => {
+            createButterfly();
+        }, 8000);
+
+        // Crear algunos elementos al inicio
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => createPetal(), i * 250);
+        }
+
+        setTimeout(() => createButterfly(), 2000);
+        setTimeout(() => createButterfly(), 6000);
+    </script>
+</body>
+</html>
